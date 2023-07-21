@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Install npm 6
+      - name: INSTALL NPM 6
         run: npm install -g npm@6
 
       - name: SET UP PYTHON 
@@ -31,7 +31,7 @@ jobs:
 
       - name: BUILD DEV
         run: |
-          npm run build
+          npm run build:pipeline
 
       - name: DEPLOY TO NPM
         run: |
