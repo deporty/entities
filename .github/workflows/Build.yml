@@ -1,0 +1,39 @@
+name: SERVER
+'on':
+  push:
+    branches:
+      - main
+      - feature/**
+jobs:
+  BUILD_AND_DEPLOY_DEV:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: CHECKOUT 
+        uses: actions/checkout@v2
+
+      - name: USE NODE.JS 
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Install npm 6
+        run: npm install -g npm@6
+
+      - name: SET UP PYTHON 
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.10.4
+
+      - name: INSTALL NODE DEPENDENCIES
+        run: |
+          npm i
+
+      - name: BUILD DEV
+        run: |
+          npm run build
+
+      - name: DEPLOY TO NPM
+        run: |
+          cd dist
+          npm publish --access public           
