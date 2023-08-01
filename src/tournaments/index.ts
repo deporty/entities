@@ -5,7 +5,7 @@ export {
   RegisteredTeamInGroupEntity,
   PositionsTable
 } from './group.entity';
-export { MatchEntity, IMatchStatusType, MATCH_STATUS } from './match.entity';
+export { MatchEntity, MatchStatusType, MATCH_STATUS } from './match.entity';
 export { PlayerForm } from './player-form.entity';
 export {
   PointsStadistics,

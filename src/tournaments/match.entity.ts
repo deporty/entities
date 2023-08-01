@@ -1,22 +1,24 @@
-import { Id } from '../general';
-import { Entity, FilePath } from '../general/general';
-import { PlaygroundEntity } from '../locations/playground.entity';
-import { PlayerForm } from './player-form.entity';
-import { IScoreModel } from './score.entity';
-import { Stadistics } from './stadistics.entity';
+import { Id } from "../general";
+import { Entity, FilePath } from "../general/general";
+import { PlaygroundEntity } from "../locations/playground.entity";
+import { PlayerForm } from "./player-form.entity";
+import { IScoreModel } from "./score.entity";
+import { Stadistics } from "./stadistics.entity";
 
-export type IMatchStatusType =
-  | 'published'
-  | 'editing'
-  | 'completed'
-  | 'in-review';
+export type MatchStatusType =
+  | "editing"
+  | "published"
+  | "running"
+  | "in-review"
+  | "completed";
 export const MATCH_STATUS = {
-  published: 'Publicado',
-  editing: 'En edición',
-  completed: 'Completado',
-  'in-review': 'En revisión',
+  editing: "En edición",
+  published: "Publicado",
+  running: "En curso",
+  "in-review": "En revisión",
+  completed: "Completado",
 };
-export type RefereeRol = 'main';
+export type RefereeRol = "main";
 export interface MatchEntity extends Entity {
   captainASignature?: FilePath;
   captainBSignature?: FilePath;
@@ -28,7 +30,7 @@ export interface MatchEntity extends Entity {
   score?: IScoreModel;
   stadistics?: Stadistics;
   playerForm?: PlayerForm;
-  status: IMatchStatusType;
+  status: MatchStatusType;
   teamAId: Id;
   teamBId: Id;
   refereeIds?: {
