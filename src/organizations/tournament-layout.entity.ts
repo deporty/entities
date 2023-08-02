@@ -1,96 +1,75 @@
-import { Entity, Id } from "../general";
-import { RegisteredTeamStatus, TournamentStatusType } from "../tournaments";
+import { Entity, Id } from '../general';
+import { RegisteredTeamStatus, TournamentStatusType } from '../tournaments';
 
-export type StadistisKind =
-  | "P"
-  | "GA"
-  | "LDF"
-  | "GD"
-  | "GIF"
-  | "FP"
-  | "LM"
-  | "PM"
-  | "TM"
-  | "WM";
+export type StadistisKind = 'P' | 'GA' | 'LDF' | 'GD' | 'GIF' | 'FP' | 'LM' | 'PM' | 'TM' | 'WM';
 
-export const DEFAULT_STADISTICS_ORDER: StadistisKind[] = [
-  "P",
-  "GA",
-  "LDF",
-  "GD",
-  "GIF",
-  "FP",
-  "LM",
-  "PM",
-  "TM",
-  "WM",
-];
+export const DEFAULT_STADISTICS_ORDER: StadistisKind[] = ['P', 'GA', 'LDF', 'GD', 'GIF', 'FP', 'LM', 'PM', 'TM', 'WM'];
 
-export type BasicTieBreakingOrder = Omit<StadistisKind, "P">;
-export type AdvancedTieBreadingOrder = "WB2" | "IP" | "BP" | "BPGT";
+export type BasicTieBreakingOrder = Omit<StadistisKind, 'P'>;
+export type AdvancedTieBreadingOrder = 'WB2' | 'IP' | 'BP' | 'BPGT';
 export type TieBreakingOrder = BasicTieBreakingOrder | AdvancedTieBreadingOrder;
 
 export enum BasicTieBreakingOrderEnum {
-  "GA" = "GA",
-  "GAPM" = "GAPM",
-  "GD" = "GD",
-  "GIF" = "GIF",
-  "FP" = "FP",
-  "LM" = "LM",
-  "PM" = "PM",
-  "TM" = "TM",
-  "WM" = "WM",
+  'GA' = 'GA',
+  'GAPM' = 'GAPM',
+  'GD' = 'GD',
+  'GIF' = 'GIF',
+  'FP' = 'FP',
+  'LM' = 'LM',
+  'PM' = 'PM',
+  'TM' = 'TM',
+  'WM' = 'WM',
 }
 export enum AdvancedTieBreakingOrderEnum {
-  "WB2" = "WB2",
-  "IP" = "IP",
-  "BP" = "BP",
-  "BPGT" = "BPGT",
+  'WB2' = 'WB2',
+  'IP' = 'IP',
+  'BP' = 'BP',
+  'BPGT' = 'BPGT',
 }
 export enum TieBreakingOrderEnum {
-  "GA" = "GA",
-  "GAPM" = "GAPM",
-  "GD" = "GD",
-  "GIF" = "GIF",
-  "FP" = "FP",
-  "LM" = "LM",
-  "PM" = "PM",
-  "WB2" = "WB2",
-  "TM" = "TM",
-  "IP" = "IP",
-  "BP" = "BP",
-  "BPGT" = "BPGT",
-  "WM" = "WM",
+  'GA' = 'GA',
+  'GAPM' = 'GAPM',
+  'GD' = 'GD',
+  'GIF' = 'GIF',
+  'FP' = 'FP',
+  'LM' = 'LM',
+  'PM' = 'PM',
+  'WB2' = 'WB2',
+  'TM' = 'TM',
+  'IP' = 'IP',
+  'BP' = 'BP',
+  'BPGT' = 'BPGT',
+  'WM' = 'WM',
 }
 
 export const TieBreakingOrderMap = {
   GA: {
     operator: (a: number, b: number) => (a < b ? 1 : a > b ? -1 : 0),
-    property: "goalsAgainst",
+    property: 'goalsAgainst',
   },
   GAPM: {
     operator: (a: number, b: number) => (a < b ? 1 : a > b ? -1 : 0),
-    property: "goalsAgainstPerMatch",
+    property: 'goalsAgainstPerMatch',
   },
   GD: {
     operator: (a: number, b: number) => (a < b ? 1 : a > b ? -1 : 0),
-    property: "goalsDifference",
+    property: 'goalsDifference',
   },
   GIF: {
     operator: (a: number, b: number) => (a < b ? 1 : a > b ? -1 : 0),
-    property: "goalsInFavor",
+    property: 'goalsInFavor',
   },
   FP: {
     operator: (a: number, b: number) => (a < b ? -1 : a > b ? 1 : 0),
-    property: "fairPlay",
+    property: 'fairPlay',
   },
   LM: {
     operator: (a: number, b: number) => (a < b ? 1 : a > b ? -1 : 0),
-    property: "lostMatches",
+    property: 'lostMatches',
   },
   PM: {
     operator: (a: number, b: number) => (a < b ? 1 : a > b ? -1 : 0),
-    property: "playedMatches",
+    property: 'playedMatches',
   },
   WB2: {
     operator: (a: number, b: number) => (a < b ? 1 : a > b ? -1 : 0),
@@ -98,14 +77,18 @@ export const TieBreakingOrderMap = {
   },
   TM: {
     operator: (a: number, b: number) => (a < b ? 1 : a > b ? -1 : 0),
-    property: "tiedMatches",
+    property: 'tiedMatches',
   },
   WM: {
     operator: (a: number, b: number) => (a < b ? 1 : a > b ? -1 : 0),
-    property: "wonMatches",
+    property: 'wonMatches',
   },
 };
 
+export interface Schema {
+  name: string;
+  stages: FixtureStageConfiguration[];
+}
 export interface FixtureStageConfiguration {
   passedTeamsCount: number[];
   groupCount: number;
@@ -125,17 +108,16 @@ export interface NegativePointsPerCard {
 
 export interface FixtureStagesConfiguration {
   negativePointsPerCard: NegativePointsPerCard;
-  stages: FixtureStageConfiguration[];
+  schemas: Schema[];
   pointsConfiguration: PointsConfiguration;
   stadisticsOrder: StadistisKind[];
   tieBreakingOrder: TieBreakingOrder[];
 }
 
-export const DEFAULT_NEGATIVE_POINTS_PER_CARD_CONFIGURATION: NegativePointsPerCard =
-  {
-    redCardsNegativePoints: 3,
-    yellowCardsNegativePoints: 2,
-  };
+export const DEFAULT_NEGATIVE_POINTS_PER_CARD_CONFIGURATION: NegativePointsPerCard = {
+  redCardsNegativePoints: 3,
+  yellowCardsNegativePoints: 2,
+};
 
 export const DEFAULT_POINTS_CONFIGURATION_CONFIGURATION: PointsConfiguration = {
   lostMatchPoints: 0,
@@ -143,39 +125,30 @@ export const DEFAULT_POINTS_CONFIGURATION_CONFIGURATION: PointsConfiguration = {
   wonMatchPoints: 3,
 };
 
-export const DEFAULT_STADISTIS_KIND_CONFIGURATION: StadistisKind[] = [
-  "P",
-  "PM",
-  "LM",
-  "WM",
-  "TM",
-  "GIF",
-  "GA",
-  "GD",
-  "FP",
-  "LDF",
-];
+export const DEFAULT_STADISTIS_KIND_CONFIGURATION: StadistisKind[] = ['P', 'PM', 'LM', 'WM', 'TM', 'GIF', 'GA', 'GD', 'FP', 'LDF'];
 
-export const DEFAULT_FIXTURE_STAGE_CONFIGURATION: FixtureStageConfiguration[] =
-  [
+export const DEFAULT_SCHEMA_CONFIGURATION: Schema = {
+  name: 'default',
+  stages: [
     {
       groupCount: 2,
       groupSize: [4, 4],
       passedTeamsCount: [2, 2],
     },
-  ];
+  ],
+};
 
-export const DEFAULT_TIE_BREAKING_ORDER_CONFIGURATION: BasicTieBreakingOrder[] =
-  ["WM", "GD", "GIF", "FP"];
+export const DEFAULT_SCHEMAS_CONFIGURATION: Schema[] = [DEFAULT_SCHEMA_CONFIGURATION];
 
-export const DEFAULT_FIXTURE_STAGES_CONFIGURATION: FixtureStagesConfiguration =
-  {
-    negativePointsPerCard: DEFAULT_NEGATIVE_POINTS_PER_CARD_CONFIGURATION,
-    pointsConfiguration: DEFAULT_POINTS_CONFIGURATION_CONFIGURATION,
-    stadisticsOrder: DEFAULT_STADISTIS_KIND_CONFIGURATION,
-    stages: DEFAULT_FIXTURE_STAGE_CONFIGURATION,
-    tieBreakingOrder: DEFAULT_TIE_BREAKING_ORDER_CONFIGURATION,
-  };
+export const DEFAULT_TIE_BREAKING_ORDER_CONFIGURATION: BasicTieBreakingOrder[] = ['WM', 'GD', 'GIF', 'FP'];
+
+export const DEFAULT_FIXTURE_STAGES_CONFIGURATION: FixtureStagesConfiguration = {
+  negativePointsPerCard: DEFAULT_NEGATIVE_POINTS_PER_CARD_CONFIGURATION,
+  pointsConfiguration: DEFAULT_POINTS_CONFIGURATION_CONFIGURATION,
+  stadisticsOrder: DEFAULT_STADISTIS_KIND_CONFIGURATION,
+  schemas: DEFAULT_SCHEMAS_CONFIGURATION,
+  tieBreakingOrder: DEFAULT_TIE_BREAKING_ORDER_CONFIGURATION,
+};
 
 export interface TournamentLayoutEntity extends Entity {
   categories: Array<string>;
