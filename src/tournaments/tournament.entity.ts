@@ -1,22 +1,10 @@
 import { Entity, FilePath, Id } from '../general/general';
+import { TournamentLayoutSchema } from '../organizations';
 import { CategoryType } from '../teams';
 import { FinancialStatementsModel } from './financial-statements.entity';
 
-export type TournamentStatusType =
-  | 'draft'
-  | 'check-in'
-  | 'running'
-  | 'finished'
-  | 'canceled'
-  | 'deleted';
-export const TOURNAMENT_STATUS_TYPE = [
-  'draft',
-  'check-in',
-  'running',
-  'finished',
-  'canceled',
-  'deleted',
-];
+export type TournamentStatusType = 'draft' | 'check-in' | 'running' | 'finished' | 'canceled' | 'deleted';
+export const TOURNAMENT_STATUS_TYPE = ['draft', 'check-in', 'running', 'finished', 'canceled', 'deleted'];
 
 export interface TournamentEntity extends Entity {
   category: CategoryType;
@@ -33,6 +21,7 @@ export interface TournamentEntity extends Entity {
   tournamentLayoutId: Id;
   refereeIds?: Id[];
   version: string;
+  schema?: TournamentLayoutSchema;
   year: number;
   podium?: string[];
 }

@@ -8,7 +8,7 @@ export {
   DEFAULT_TIE_BREAKING_ORDER_CONFIGURATION,
   DEFAULT_SCHEMAS_CONFIGURATION,
   DEFAULT_SCHEMA_CONFIGURATION,
-  Schema,
+  TournamentLayoutSchema,
   AdvancedTieBreadingOrder,
   AdvancedTieBreakingOrderEnum,
   BasicTieBreakingOrder,

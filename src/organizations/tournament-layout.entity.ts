@@ -85,7 +85,7 @@ export const TieBreakingOrderMap = {
   },
 };
 
-export interface Schema {
+export interface TournamentLayoutSchema {
   name: string;
   stages: FixtureStageConfiguration[];
 }
@@ -108,7 +108,7 @@ export interface NegativePointsPerCard {
 
 export interface FixtureStagesConfiguration {
   negativePointsPerCard: NegativePointsPerCard;
-  schemas: Schema[];
+  schemas: TournamentLayoutSchema[];
   pointsConfiguration: PointsConfiguration;
   stadisticsOrder: StadistisKind[];
   tieBreakingOrder: TieBreakingOrder[];
@@ -127,7 +127,7 @@ export const DEFAULT_POINTS_CONFIGURATION_CONFIGURATION: PointsConfiguration = {
 
 export const DEFAULT_STADISTIS_KIND_CONFIGURATION: StadistisKind[] = ['P', 'PM', 'LM', 'WM', 'TM', 'GIF', 'GA', 'GD', 'FP', 'LDF'];
 
-export const DEFAULT_SCHEMA_CONFIGURATION: Schema = {
+export const DEFAULT_SCHEMA_CONFIGURATION: TournamentLayoutSchema = {
   name: 'default',
   stages: [
     {
@@ -138,7 +138,7 @@ export const DEFAULT_SCHEMA_CONFIGURATION: Schema = {
   ],
 };
 
-export const DEFAULT_SCHEMAS_CONFIGURATION: Schema[] = [DEFAULT_SCHEMA_CONFIGURATION];
+export const DEFAULT_SCHEMAS_CONFIGURATION: TournamentLayoutSchema[] = [DEFAULT_SCHEMA_CONFIGURATION];
 
 export const DEFAULT_TIE_BREAKING_ORDER_CONFIGURATION: BasicTieBreakingOrder[] = ['WM', 'GD', 'GIF', 'FP'];
 
