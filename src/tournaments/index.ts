@@ -42,3 +42,4 @@ export {
 } from './financial-statements.entity';
 export { IntergroupMatchEntity } from './intergroup-matches.entity';
 export { NodeMatchEntity } from './main-draw.entity';
+export { MainDrawMatchesByRefereeIdEntity,IntergroupMatchesByRefereeIdEntity,GroupMatchesByRefereeIdEntity,MatchesByRefereeIdEntity,KindMatch } from './matches-by-referee-id';
