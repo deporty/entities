@@ -3,6 +3,36 @@ import { Entity } from '../general/general';
 import { MatchEntity } from './match.entity';
 import { FlatPointsStadistics } from './points-stadistics.entity';
 
+
+export const DEFAULT_GROUP_SIZE_LABELS = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+];
+
 export interface PositionsTable {
   table: {
     teamId: string;
