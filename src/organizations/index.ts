@@ -22,4 +22,5 @@ export {
   TieBreakingOrderEnum,
   TieBreakingOrderMap,
   TournamentLayoutEntity,
+  RequiredDocConfig
 } from './tournament-layout.entity';

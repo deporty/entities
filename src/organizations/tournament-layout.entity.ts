@@ -114,6 +114,14 @@ export interface FixtureStagesConfiguration {
   tieBreakingOrder: TieBreakingOrder[];
 }
 
+export interface RequiredDocConfig {
+  name: string;
+  description: string;
+  applyTo: 'player' | 'team';
+  fileKind: ('pdf' | 'jpg')[];
+  status: 'enabled' | 'disabled' | 'deleted';
+}
+
 export const DEFAULT_NEGATIVE_POINTS_PER_CARD_CONFIGURATION: NegativePointsPerCard = {
   redCardsNegativePoints: 3,
   yellowCardsNegativePoints: 2,
@@ -156,6 +164,7 @@ export interface TournamentLayoutEntity extends Entity {
   flayer?: string;
   name: string;
   organizationId: Id;
+  requiredDocsConfig?: RequiredDocConfig[];
   registeredTeamsVisibleStatus?: RegisteredTeamStatus[];
   fixtureStagesConfiguration?: FixtureStagesConfiguration;
   editions?: Array<string>;
