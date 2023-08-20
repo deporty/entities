@@ -3,7 +3,7 @@ import { Entity, FilePath } from '../general/general';
 import { UserEntity } from '../users';
 
 export type Position = 'goalkeeper' | 'forward' | 'midfielder' | 'defender';
-export type KindMember = 'technical-director' | 'player' | 'technicalAssistant';
+export type KindMember = 'technical-director' | 'player' | 'technical-assistant' | 'owner';
 
 export type CategoryType =
   | 'Sub 3'
@@ -29,7 +29,7 @@ export type CategoryType =
 
 export interface MemberEntity extends Entity {
   initDate?: Date;
-  kindMember: KindMember;
+  kindMember: KindMember | KindMember[];
   number?: number;
   position?: Position;
   retirementDate?: Date;
@@ -47,6 +47,7 @@ export interface TeamEntity extends Entity {
   category: CategoryType;
   miniShield?: FilePath;
   name: string;
+  city?: string;
   shield?: FilePath;
   sportIds: Id[];
 }
