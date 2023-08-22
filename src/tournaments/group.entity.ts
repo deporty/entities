@@ -3,7 +3,6 @@ import { Entity } from '../general/general';
 import { MatchEntity } from './match.entity';
 import { FlatPointsStadistics } from './points-stadistics.entity';
 
-
 export const DEFAULT_GROUP_SIZE_LABELS = [
   'A',
   'B',
