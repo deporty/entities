@@ -33,6 +33,8 @@ export interface MemberEntity extends Entity {
   number?: number;
   position?: Position;
   retirementDate?: Date;
+  image?: string;
+
   teamId: Id;
   userId: Id;
 }

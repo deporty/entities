@@ -116,6 +116,7 @@ export interface FixtureStagesConfiguration {
 
 export interface RequiredDocConfig {
   name: string;
+  identifier: string;
   description: string;
   applyTo: 'player' | 'team';
   fileKind: ('pdf' | 'jpg')[];
