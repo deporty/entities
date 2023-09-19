@@ -17,7 +17,12 @@ export {
   Time,
 } from './stadistics.entity';
 export { TournamentEntity, TournamentStatusType, TOURNAMENT_STATUS_TYPE } from './tournament.entity';
-export { RegisteredTeamEntity, REGISTERED_TEAM_STATUS, RegisteredTeamStatus } from './registered-teams.entity';
+export {
+  RegisteredTeamEntity,
+  REGISTERED_TEAM_STATUS,
+  RegisteredTeamStatus,
+  RequiredDocsInRegisteredTeam,
+} from './registered-teams.entity';
 export { IFinancialStatementStatusType, FinancialStatementsModel, IInvoiceTournamentEntity } from './financial-statements.entity';
 export { IntergroupMatchEntity } from './intergroup-matches.entity';
 export { NodeMatchEntity } from './main-draw.entity';
