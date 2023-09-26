@@ -4,6 +4,7 @@ import { UserEntity } from '../users';
 
 export type Position = 'goalkeeper' | 'forward' | 'midfielder' | 'defender';
 export type KindMember = 'technical-director' | 'player' | 'technical-assistant' | 'owner';
+export type TeamStatus = 'enabled' | 'disabled' | 'deleted';
 
 export type CategoryType =
   | 'Sub 3'
@@ -51,5 +52,6 @@ export interface TeamEntity extends Entity {
   name: string;
   city?: string;
   shield?: FilePath;
+  status?: TeamStatus;
   sportIds: Id[];
 }
