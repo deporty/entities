@@ -12,7 +12,7 @@ export interface UserEntity extends Entity {
   firstName: string;
   secondName: string;
   phone: string;
-  administrationWay?: AdministratioNMode;
+  administrationMode?: AdministratioNMode;
   phoneExtension: string;
   roles: Array<Id>;
 }
