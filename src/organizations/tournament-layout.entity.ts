@@ -118,6 +118,7 @@ export interface RequiredDocConfig {
   name: string;
   identifier: string;
   description: string;
+  alias: string;
   applyTo: 'player' | 'team';
   fileKind: ('pdf' | 'jpg')[];
   status: 'enabled' | 'disabled' | 'deleted';
