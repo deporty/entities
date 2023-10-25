@@ -7,3 +7,4 @@ export * from './locations/index';
 export * from './tournaments/index';
 export * from './authorization/index';
 export * from './news/index';
+export * from './administration/index';
