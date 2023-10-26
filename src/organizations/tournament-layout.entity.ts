@@ -167,6 +167,7 @@ export interface TournamentLayoutEntity extends Entity {
   name: string;
   organizationId: Id;
   requiredDocsConfig?: RequiredDocConfig[];
+  allowAutoInscriptionFromTeamModifications?: boolean;
   registeredTeamsVisibleStatus?: RegisteredTeamStatus[];
   fixtureStagesConfiguration?: FixtureStagesConfiguration;
   editions?: Array<string>;
