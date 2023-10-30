@@ -1,5 +1,8 @@
 import { Entity, Id } from '../general';
 
+
+export type  OrganizationStatus = 'active' | 'disabled' |'hidden';
+
 export interface OrganizationEntity extends Entity {
   FMTA: number;
   NTP: number;
@@ -7,6 +10,7 @@ export interface OrganizationEntity extends Entity {
   businessName?: string;
   iso: string;
   members: Array<string>;
+  status: OrganizationStatus
 }
 
 export interface OrganizationMemberEntity extends Entity {
