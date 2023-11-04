@@ -4,7 +4,7 @@ import { InvoiceEntity, IInvoiceStatusType } from '../invoices/invoice.model';
 export type IFinancialStatementStatusType = IInvoiceStatusType;
 
 export interface FinancialStatementsModel {
-  ammount: number;
+  amount: number;
   numOfInvoices: number;
   status: IFinancialStatementStatusType;
 }
