@@ -16,7 +16,13 @@ export {
   GoalKind,
   Time,
 } from './stadistics.entity';
-export { TournamentEntity, TournamentStatusType, TOURNAMENT_STATUS_TYPE } from './tournament.entity';
+export {
+  TournamentEntity,
+  TournamentStatusType,
+  TOURNAMENT_STATUS_TYPE,
+  FINANCIAL_STATUS_TYPE,
+  FinancialStatusType,
+} from './tournament.entity';
 export {
   RegisteredTeamEntity,
   REGISTERED_TEAM_STATUS,

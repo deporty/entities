@@ -6,7 +6,6 @@ export type IFinancialStatementStatusType = IInvoiceStatusType;
 export interface FinancialStatementsModel {
   amount: number;
   numOfInvoices: number;
-  status: IFinancialStatementStatusType;
 }
 
 export interface IInvoiceTournamentEntity extends InvoiceEntity {
