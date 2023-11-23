@@ -1,5 +1,5 @@
 import { Entity, FilePath, Id } from '../general/general';
-import { TournamentLayoutSchema } from '../organizations';
+import { TournamentLayoutEntity, TournamentLayoutSchema } from '../organizations';
 import { CategoryType } from '../teams';
 import { FinancialStatementsModel } from './financial-statements.entity';
 
@@ -23,6 +23,8 @@ export interface TournamentEntity extends Entity {
   status: TournamentStatusType;
   financialStatus?: FinancialStatusType;
   tournamentLayoutId: Id;
+  tournamentLayout?: TournamentLayoutEntity;
+  requestRequiredDocs?: boolean;
   refereeIds?: Id[];
   version: string;
   schema?: TournamentLayoutSchema;

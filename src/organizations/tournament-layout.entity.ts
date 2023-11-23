@@ -169,6 +169,7 @@ export interface TournamentLayoutEntity extends Entity {
   requiredDocsConfig?: RequiredDocConfig[];
   allowAutoInscriptionFromTeamModifications?: boolean;
   registeredTeamsVisibleStatus?: RegisteredTeamStatus[];
+  defaultRegisteredTeamStatus?: RegisteredTeamStatus;
   fixtureStagesConfiguration?: FixtureStagesConfiguration;
   editions?: Array<string>;
 }

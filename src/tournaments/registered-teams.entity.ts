@@ -6,7 +6,7 @@ export type RegisteredTeamStatus = 'pre-registered' | 'pre-registered and enable
 export const REGISTERED_TEAM_STATUS = ['pre-registered', 'pre-registered and enabled', 'enabled'];
 
 export interface RequiredDocsInRegisteredTeam {
-  players: {
+  members: {
     [memberId: string]: {
       [requiredDocIdentifier: string]: string;
     };
