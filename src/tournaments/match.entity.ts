@@ -1,7 +1,7 @@
 import { Id } from '../general';
 import { Entity, FilePath } from '../general/general';
 import { PlaygroundEntity } from '../locations/playground.entity';
-import { PlayerForm } from './player-form.entity';
+import { PlayerForm, PlayersInMatchData } from './player-form.entity';
 import { IScoreModel } from './score.entity';
 import { Stadistics } from './stadistics.entity';
 
@@ -26,6 +26,7 @@ export interface MatchEntity extends Entity {
   score?: IScoreModel;
   stadistics?: Stadistics;
   playerForm?: PlayerForm;
+  playersInMatchData?: PlayersInMatchData;
   status: MatchStatusType;
   teamAId: Id;
   teamBId: Id;

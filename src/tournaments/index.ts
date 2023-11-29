@@ -1,7 +1,7 @@
 export { FixtureStageEntity } from './fixture-stage.entity';
 export { GroupEntity, MatchInGroupEntity, RegisteredTeamInGroupEntity, PositionsTable, DEFAULT_GROUP_SIZE_LABELS } from './group.entity';
 export { MatchEntity, MatchStatusType, MATCH_STATUS } from './match.entity';
-export { PlayerForm } from './player-form.entity';
+export { PlayerForm, PlayersInMatchData } from './player-form.entity';
 export { PointsStadistics, GroupPointsStadistics, FlatPointsStadistics } from './points-stadistics.entity';
 export { IScoreModel } from './score.entity';
 export {
