@@ -12,6 +12,10 @@ files = [
         'target': r'../dist/.npmrc'
     }
 ]
+
+if not os.path.exists("../dist"):
+    os.mkdir("../dist")
+
 for f in files:
     shutil.copyfile(f['original'], f['target'])
 
