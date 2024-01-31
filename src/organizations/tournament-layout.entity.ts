@@ -172,4 +172,6 @@ export interface TournamentLayoutEntity extends Entity {
   defaultRegisteredTeamStatus?: RegisteredTeamStatus;
   fixtureStagesConfiguration?: FixtureStagesConfiguration;
   editions?: Array<string>;
+  minimunPlayersForTeam?: number;
+  maximumPlayersForTeam?: number;
 }
