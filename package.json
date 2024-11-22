@@ -1,6 +1,6 @@
 {
   "name": "@deporty-org/entities",
-  "version": "0.29.0",
+  "version": "0.31.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,5 +13,8 @@
     "typescript": "~4.1.5"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^11.0.3"
+  }
 }
