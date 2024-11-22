@@ -174,4 +174,5 @@ export interface TournamentLayoutEntity extends Entity {
   editions?: Array<string>;
   minimunPlayersForTeam?: number;
   maximumPlayersForTeam?: number;
+  bannedUserIds?: Array<Id>;  
 }
